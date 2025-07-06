@@ -1,0 +1,12 @@
+DOMAIN-SUFFIX,rpc-ru.aqara.com,DIRECT
+DOMAIN-SUFFIX,coap-ru.aqara.com,DIRECT
+DOMAIN-SUFFIX,open-ru.aqara.com,DIRECT
+
+DOMAIN-SUFFIX,cdn.aqara.com,DIRECT
+DOMAIN-SUFFIX,app-h5.aqara.cn,DIRECT
+
+DOMAIN-SUFFIX,api.io.mi.com,DIRECT
+DOMAIN-SUFFIX,apicn.hualaikeji.com,DIRECT
+
+DOMAIN-SUFFIX,p2p2-usa.aqara.com,DIRECT
+DOMAIN-SUFFIX,p2p3-usa.aqara.com,DIRECT
