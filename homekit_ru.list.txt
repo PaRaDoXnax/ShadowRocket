@@ -15,3 +15,22 @@ DOMAIN,smp-device-content.apple.com,DIRECT
 
 DST-PORT,5353,DIRECT
 DST-PORT,5223,DIRECT
+
+[Rule]
+# Локальная сеть
+IP-CIDR,192.168.0.0/16,DIRECT
+IP-CIDR,10.0.0.0/8,DIRECT
+IP-CIDR,169.254.0.0/16,DIRECT
+
+# Bonjour службы
+PROCESS-NAME,NSNetService,DIRECT
+PROCESS-NAME,NSNetServiceBrowser,DIRECT
+PROCESS-NAME,CFNetService,DIRECT
+PROCESS-NAME,CFNetServiceBrowser,DIRECT
+
+# Исключения для камер (если требуется дополнительно)
+DOMAIN-SUFFIX,home.apple.com,DIRECT
+DOMAIN-SUFFIX,push.apple.com,DIRECT
+
+# Всё остальное через прокси
+FINAL,PROXY
