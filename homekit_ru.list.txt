@@ -2,6 +2,7 @@
 IP-CIDR,192.168.0.0/16,DIRECT
 IP-CIDR,10.0.0.0/8,DIRECT
 IP-CIDR,169.254.0.0/16,DIRECT
+IP-CIDR,192.168.88.254/16,DIRECT
 
 # Исключаем multicast и broadcast, которые нужны для mDNS/Bonjour
 IP-CIDR,224.0.0.0/4,DIRECT
