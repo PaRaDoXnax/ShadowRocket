@@ -1,33 +1,34 @@
-
-# Локальная сеть
+# Исключаем локальную сеть (LAN) — трафик к устройствам будет идти напрямую
 IP-CIDR,192.168.0.0/16,DIRECT
 IP-CIDR,10.0.0.0/8,DIRECT
 IP-CIDR,169.254.0.0/16,DIRECT
-IP-CIDR,192.168.88.254,DIRECT
-IP-CIDR,17.0.0.0/8,DIRECT
-IP-CIDR,192.168.0.0/16,DIRECT
-IP-CIDR,10.0.0.0/8,DIRECT
-IP-CIDR,172.16.0.0/12,DIRECT
-IP-CIDR,127.0.0.1/32,DIRECT
 
-# Bonjour службы
+# Исключаем multicast и broadcast, которые нужны для mDNS/Bonjour
+IP-CIDR,224.0.0.0/4,DIRECT
+
+# Исключаем процессы, связанные с Bonjour / mDNS в iOS
 PROCESS-NAME,NSNetService,DIRECT
 PROCESS-NAME,NSNetServiceBrowser,DIRECT
 PROCESS-NAME,CFNetService,DIRECT
 PROCESS-NAME,CFNetServiceBrowser,DIRECT
 
-# Исключения для камер (если требуется дополнительно)
+# Домены Apple для HomeKit, iCloud и push-уведомлений — напрямую, минуя VPN
 DOMAIN-SUFFIX,home.apple.com,DIRECT
 DOMAIN-SUFFIX,push.apple.com,DIRECT
-DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,gateway.icloud.com,DIRECT
+DOMAIN-SUFFIX,identity.apple.com,DIRECT
+DOMAIN-SUFFIX,cvws.icloud-content.com,DIRECT
+DOMAIN-SUFFIX,apple.com.akadns.net,DIRECT
+DOMAIN-SUFFIX,icloud.com.akadns.net,DIRECT
 DOMAIN-SUFFIX,icloud-content.com,DIRECT
-DOMAIN-SUFFIX,apple.com,DIRECT
-DOMAIN-SUFFIX,mzstatic.com,DIRECT
-DOMAIN,bag.itunes.apple.com,DIRECT
-DOMAIN,gateway.icloud.com,DIRECT
-DOMAIN,smp-device-content.apple.com,DIRECT
-DST-PORT,5353,DIRECT
-DST-PORT,5223,DIRECT
+DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,akadns.net,DIRECT
+DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+DOMAIN-SUFFIX,apple-dns.net,DIRECT
+DOMAIN-SUFFIX,homekit.apple.com,DIRECT
+DOMAIN-SUFFIX,homekitcontent.apple.com,DIRECT
+DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+DOMAIN-SUFFIX,apple-mapkit.com,DIRECT
 
-# Всё остальное через прокси
+# Всё остальное идёт через прокси (VPN)
 FINAL,PROXY
