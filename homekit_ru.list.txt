@@ -9,14 +9,14 @@ IP-CIDR,224.0.0.0/4,DIRECT
 IP-CIDR,17.0.0.0/8,DIRECT
 
 # Домены Apple, чтобы HomeKit работал вне дома
-DOMAIN-SUFFIX,icloud.com,DIRECT
-DOMAIN-SUFFIX,icloud-content.com,DIRECT
-DOMAIN-SUFFIX,apple.com,DIRECT
-DOMAIN-SUFFIX,mzstatic.com,DIRECT
-DOMAIN,homekitvideo.icloud.com,DIRECT
-DOMAIN,gateway.icloud.com,DIRECT
-DOMAIN,smp-device-content.apple.com,DIRECT
-DOMAIN,bag.itunes.apple.com,DIRECT
+DOMAIN-SUFFIX,icloud.com,DIRECT,no-resolve
+DOMAIN-SUFFIX,icloud-content.com,DIRECT,no-resolve
+DOMAIN-SUFFIX,apple.com,DIRECT,no-resolve
+DOMAIN-SUFFIX,mzstatic.com,DIRECT,no-resolve
+DOMAIN,homekitvideo.icloud.com,DIRECT,no-resolve
+DOMAIN,gateway.icloud.com,DIRECT,no-resolve
+DOMAIN,smp-device-content.apple.com,DIRECT,no-resolve
+DOMAIN,bag.itunes.apple.com,DIRECT,no-resolve
 
 # Bonjour, APNs — всегда DIRECT
 DST-PORT,5353,DIRECT
