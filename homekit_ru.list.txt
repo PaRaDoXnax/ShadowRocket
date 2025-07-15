@@ -1,31 +1,26 @@
-# Apple services
-DOMAIN-SUFFIX,apple.com,DIRECT
-DOMAIN-SUFFIX,icloud.com,DIRECT
-DOMAIN-SUFFIX,itunes.apple.com,DIRECT
-DOMAIN-SUFFIX,aaplimg.com,DIRECT
+# Локальная сеть — всегда DIRECT
+IP-CIDR,192.168.0.0/16,DIRECT
+IP-CIDR,10.0.0.0/8,DIRECT
+IP-CIDR,172.16.0.0/12,DIRECT
+IP-CIDR,127.0.0.1/32,DIRECT
+IP-CIDR,224.0.0.0/4,DIRECT
 
-# Examples from your logs
+# Все IP Apple — DIRECT (важно для HomeKit вне дома)
+IP-CIDR,17.0.0.0/8,DIRECT
+
+# Домены Apple, чтобы HomeKit работал вне дома
+DOMAIN-SUFFIX,icloud.com,DIRECT
+DOMAIN-SUFFIX,icloud-content.com,DIRECT
+DOMAIN-SUFFIX,apple.com,DIRECT
+DOMAIN-SUFFIX,mzstatic.com,DIRECT
+DOMAIN,homekitvideo.icloud.com,DIRECT
 DOMAIN,gateway.icloud.com,DIRECT
 DOMAIN,smp-device-content.apple.com,DIRECT
 DOMAIN,bag.itunes.apple.com,DIRECT
-DOMAIN,time.g.aaplimg.com,DIRECT
 
-# Apple IP ranges
-IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
+# Bonjour, APNs — всегда DIRECT
+DST-PORT,5353,DIRECT
+DST-PORT,5223,DIRECT
 
-# Local networks
-IP-CIDR,10.0.0.0/8,DIRECT
-IP-CIDR,172.16.0.0/12,DIRECT
-IP-CIDR,192.168.0.0/16,DIRECT
-
-# RFC1918 special purpose addresses (optional, more strict)
-IP-CIDR,127.0.0.0/8,DIRECT
-IP-CIDR,169.254.0.0/16,DIRECT
-IP-CIDR,224.0.0.0/4,DIRECT
-IP-CIDR,240.0.0.0/4,DIRECT
-
-# NTP traffic
-UDP,123,DIRECT
-
-# Other traffic via PROXY
+# Всё остальное через VPN
 FINAL,PROXY
